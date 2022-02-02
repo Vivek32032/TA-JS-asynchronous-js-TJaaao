@@ -1,20 +1,32 @@
 1. Create a promise. Have it resolve with a value of `Promise Resolved!` in resolve after a delay of 1000ms, using `setTimeout`. Print the contents of the promise after it has been resolved by passing `console.log` to `.then`
 
 ```js
-// Your code
-flkja
+new Promise((resolve,reject)=>{
+    setTimeout(()=> {
+        resolve("Promise Resolved!");
+    },1000);
+    })
+promise.then(console.log);
 ```
 
 2. Create another promise. Now have it reject with a value of `Rejected Promise!` without using `setTimeout`. Print the contents of the promise after it has been rejected by passing console.log to `.catch`
 
 ```js
-// Your code
+let promise = new Promise((resolve,reject)=> {
+    reject("Rejected Promise!")
+});
+promise.catch(console.log);
 ```
 
 3. Create another promise. Now have it reject with a value of `Rejected Promise!` without using `setTimeout`. Print the contents of the promise after it has been rejected by passing console.log to `.catch` and also use `.finally` to log message `Promise Settled!`.
 
 ```js
-// Your code
+ let promise = new Promise((resolve, reject) => {
+     reject('Rejected Promise!');
+ });
+
+ promise.catch(console.log);
+
 ```
 
 4. What will be the output of the code below.
@@ -34,7 +46,14 @@ console.log('D');
 5. Write a function named `wait` that accepts `time` in ms returns a promise. The promise gets resolved after given time.
 
 ```js
-// Your code
+   function wait(time){
+       return new Promise((res,rej)=>{
+           setTimeout()=> {
+               res(`Promise Resolved!`)
+           }, time)
+       })
+   }
+wait(1000).then(console.log)
 ```
 
 6. Do the following:
@@ -47,7 +66,16 @@ console.log('D');
 - Catch the error using `.catch`
 
 ```js
-// Your code
+let promise = new Promise((res,rej)=>{
+    res(21);
+}).then((value) => value+10)
+}),then((value)=> value +100)
+.then(value => {
+    if(value > 100){
+        throw new Error("Something went wrong!");
+
+    }
+}).catch(console.log)
 ```
 
 7. Do the following:
@@ -59,7 +87,16 @@ console.log('D');
 - Use `.then` and log the value
 
 ```js
-// Your code
+let promise = new Promise((res,rej)=>{
+    res(["A"]);
+}).then((value) => value+10)
+}),then((value)=> value +100)
+.then(value => {
+    if(value > 100){
+        throw new Error("Something went wrong!");
+
+    }
+}).catch(console.log)
 ```
 
 8. Do the following:
